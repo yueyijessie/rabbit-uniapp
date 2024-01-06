@@ -19,7 +19,7 @@ const httpInterceptor = {
     }
     // 4. 添加token请求头标识
     const memberStore = useMemberStore()
-    const token = memberStore.profile?.token
+    const token = memberStore.profile?.token // ?是可选链, 允许前面表达式为空值
     if (token) {
       options.header.Authorization = token
     }
